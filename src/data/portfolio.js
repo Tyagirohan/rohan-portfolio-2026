@@ -4,7 +4,7 @@ export const personalInfo = {
   company: "Synopsys Inc",
   email: "tyagirohan.142@gmail.com",
   phone: "+91 7533804014",
-  location: "Bengaluru, India",
+  location: "Noida, India",
   links: {
     github: "https://github.com/Tyagirohan",
     linkedin: "https://linkedin.com/in/rohan-tyagi-333675202",
@@ -19,7 +19,7 @@ export const experience = [
     id: 1,
     role: "Research & Development Engineer",
     company: "Synopsys Inc",
-    location: "Bengaluru, India",
+    location: "Noida, India",
     period: "Jul 2024 – Present",
     description: "Led C++/Python development for advanced synthesis tools (Design Compiler, Fusion Compiler) in performance-critical EDA workflows.",
     achievements: [
@@ -39,7 +39,7 @@ export const experience = [
     id: 2,
     role: "Graduate Engineer",
     company: "Synopsys Inc",
-    location: "Bengaluru, India",
+    location: "Noida, India",
     period: "Aug 2023 – Jul 2024",
     description: "Developed comprehensive QoR visualization and analysis tools.",
     achievements: [
@@ -261,4 +261,3 @@ export const achievements = [
   "40% Crash Rate Reduction in Production",
   "30% MTTR Reduction through Diagnostic Tools"
 ];
-
