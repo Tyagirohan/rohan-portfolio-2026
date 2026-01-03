@@ -8,7 +8,7 @@ export const personalInfo = {
   links: {
     github: "https://github.com/Tyagirohan",
     linkedin: "https://linkedin.com/in/rohan-tyagi-333675202",
-    portfolio: "https://github.com/Tyagirohan"
+    portfolio: "https://rohanportfolio2026.vercel.app"
   },
   summary: "R&D Engineer at Synopsys specializing in performance-oriented systems development with C++ and Python. Strong in Data Structures & Algorithms (solved 500+ problems across platforms), complexity analysis, and system-level design. Delivered measurable impact: 20% speedups, 40% crash reduction, and 10% fewer non-deterministic failures in production workflows.",
   about: "I'm a passionate software engineer with a deep love for optimizing systems and solving complex algorithmic challenges. My journey from being a Gold Medalist at ABES Engineering College to working on cutting-edge EDA tools at Synopsys has been driven by curiosity and a commitment to excellence. I thrive in performance-critical environments where every millisecond counts, and I believe that elegant code is the intersection of efficiency and clarity. Beyond coding, I'm constantly exploring new technologies, contributing to open-source projects, and sharing knowledge through my DSA repositories that help fellow developers master problem-solving patterns."

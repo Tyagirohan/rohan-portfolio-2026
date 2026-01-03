@@ -2,7 +2,7 @@
 
 A high-performance, interactive 3D portfolio built with React, Three.js, and GSAP, featuring a unique circuit board journey theme.
 
-[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://your-portfolio-url.vercel.app)
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://rohanportfolio2026.vercel.app)
 [![React](https://img.shields.io/badge/React-18.3-61dafb?logo=react)](https://reactjs.org/)
 [![Three.js](https://img.shields.io/badge/Three.js-0.170-black?logo=three.js)](https://threejs.org/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -37,10 +37,10 @@ A high-performance, interactive 3D portfolio built with React, Three.js, and GSA
 
 ```bash
 # Clone the repository
-git clone https://github.com/Tyagirohan/rohan-portfolio.git
+git clone https://github.com/Tyagirohan/rohan-portfolio-2026.git
 
 # Navigate to project directory
-cd rohan-portfolio
+cd rohan-portfolio-2026
 
 # Install dependencies
 npm install
