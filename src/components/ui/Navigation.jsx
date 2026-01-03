@@ -92,15 +92,16 @@ const Navigation = () => {
               ))}
               {/* Theme Toggle */}
               <ThemeToggle />
-              {/* Resume Download Button - Temporarily disabled */}
-              <button
-                disabled
-                className="ml-2 px-4 py-2 bg-gray-600 text-gray-400 cursor-not-allowed rounded-lg font-medium flex items-center space-x-2 opacity-50"
-                title="Resume will be available soon"
+              {/* Resume Download Button */}
+              <a
+                href="/resume.pdf"
+                download="Rohan_Tyagi_Resume.pdf"
+                className="ml-2 px-4 py-2 bg-pcb-copper hover:bg-pcb-gold text-white rounded-lg font-medium flex items-center space-x-2 transition-colors duration-300"
+                title="Download Resume"
               >
                 <span>📄</span>
                 <span>Resume</span>
-              </button>
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -144,18 +145,19 @@ const Navigation = () => {
                   {item.label}
                 </motion.button>
               ))}
-              {/* Mobile Resume Download - Temporarily disabled */}
-              <motion.button
-                disabled
+              {/* Mobile Resume Download */}
+              <motion.a
+                href="/resume.pdf"
+                download="Rohan_Tyagi_Resume.pdf"
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: navItems.length * 0.05 }}
-                className="px-4 py-3 bg-gray-600 text-gray-400 cursor-not-allowed rounded-lg font-medium text-center opacity-50"
-                title="Resume will be available soon"
+                className="px-4 py-3 bg-pcb-copper hover:bg-pcb-gold text-white rounded-lg font-medium text-center transition-colors duration-300"
+                title="Download Resume"
               >
                 <span className="mr-3">📄</span>
-                Resume (Coming Soon)
-              </motion.button>
+                Download Resume
+              </motion.a>
             </div>
           </motion.div>
         )}
