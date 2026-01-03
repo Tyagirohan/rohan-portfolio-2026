@@ -1,0 +1,336 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  :root {
+    /* Dark theme colors (default) */
+    --color-bg-primary: #0a1612;
+    --color-bg-secondary: #1a3a2e;
+    --color-bg-gradient-from: #0a1612;
+    --color-bg-gradient-to: #1a3a2e;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #e5e7eb;
+    --color-text-muted: #9ca3af;
+    --color-copper: #b87333;
+    --color-gold: #d4af37;
+    --color-trace: #ffd700;
+    --color-border: rgba(184, 115, 51, 0.3);
+    --color-border-hover: #d4af37;
+  }
+
+  .dark {
+    /* Dark theme (same as default) */
+    --color-bg-primary: #0a1612;
+    --color-bg-secondary: #1a3a2e;
+    --color-bg-gradient-from: #0a1612;
+    --color-bg-gradient-to: #1a3a2e;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #e5e7eb;
+    --color-text-muted: #9ca3af;
+    --color-copper: #b87333;
+    --color-gold: #d4af37;
+    --color-trace: #ffd700;
+    --color-border: rgba(184, 115, 51, 0.3);
+    --color-border-hover: #d4af37;
+  }
+
+  html:not(.dark) {
+    /* Light theme - Premium warm gradient */
+    --color-bg-primary: #faf8f5;
+    --color-bg-secondary: #ffffff;
+    --color-bg-gradient-from: #fff5e6;
+    --color-bg-gradient-to: #ffe8cc;
+    --color-text-primary: #0d0d0d;
+    --color-text-secondary: #2d2d2d;
+    --color-text-muted: #4a4a4a;
+    --color-copper: #c87941;
+    --color-gold: #d68a34;
+    --color-trace: #ffb347;
+    --color-border: rgba(200, 121, 65, 0.3);
+    --color-border-hover: #d68a34;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased;
+    background: linear-gradient(135deg, var(--color-bg-gradient-from) 0%, var(--color-bg-gradient-to) 100%);
+    color: var(--color-text-primary);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    transition: background 0.5s ease, color 0.3s ease;
+    min-height: 100vh;
+  }
+
+  /* Light mode specific backgrounds */
+  html:not(.dark) body {
+    background: linear-gradient(135deg, #fff9f0 0%, #ffe8cc 50%, #ffd9a3 100%);
+    background-attachment: fixed;
+  }
+
+  code {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .section {
+    @apply min-h-screen w-full relative;
+    transition: background-color 0.5s ease;
+  }
+
+  /* Light mode section styling */
+  html:not(.dark) .section {
+    background: transparent;
+  }
+
+  html:not(.dark) .section:nth-child(even) {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .circuit-trace {
+    background: linear-gradient(90deg, transparent, var(--color-trace), transparent);
+    animation: trace-flow 2s linear infinite;
+  }
+
+  .chip-glow {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5),
+                0 0 40px rgba(212, 175, 55, 0.3),
+                0 0 60px rgba(212, 175, 55, 0.2);
+  }
+
+  html:not(.dark) .chip-glow {
+    box-shadow: 0 0 20px rgba(230, 184, 77, 0.4),
+                0 0 40px rgba(230, 184, 77, 0.2),
+                0 0 60px rgba(230, 184, 77, 0.1);
+  }
+
+  .pcb-texture {
+    background-image: 
+      linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent),
+      linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent);
+    background-size: 50px 50px;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, var(--color-copper), var(--color-gold), var(--color-trace));
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 font-medium rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
+    background: linear-gradient(135deg, var(--color-copper), var(--color-gold));
+    color: #ffffff;
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(135deg, var(--color-gold), var(--color-trace));
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 border-2 font-medium rounded-lg transition-all duration-300;
+    border-color: var(--color-copper);
+    color: var(--color-copper);
+    background: transparent;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+    background: rgba(230, 184, 77, 0.1);
+  }
+
+  .card-pcb {
+    @apply rounded-lg p-6 transition-all duration-300 hover:shadow-xl;
+    background: var(--color-bg-secondary);
+    border: 2px solid var(--color-border);
+    backdrop-filter: blur(10px);
+  }
+
+  html:not(.dark) .card-pcb {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 249, 240, 0.95) 100%);
+    box-shadow: 0 4px 6px rgba(200, 121, 65, 0.1);
+  }
+
+  .card-pcb:hover {
+    border-color: var(--color-border-hover);
+    transform: translateY(-2px);
+  }
+
+  html:not(.dark) .card-pcb:hover {
+    box-shadow: 0 8px 16px rgba(200, 121, 65, 0.2);
+  }
+
+  /* Light mode text improvements */
+  html:not(.dark) .text-white {
+    color: #0d0d0d !important;
+    font-weight: 600;
+  }
+
+  html:not(.dark) .text-gray-300 {
+    color: #2d2d2d !important;
+    font-weight: 500;
+  }
+
+  html:not(.dark) .text-gray-400 {
+    color: #3d3d3d !important;
+    font-weight: 500;
+  }
+
+  html:not(.dark) .text-gray-500 {
+    color: #4a4a4a !important;
+  }
+
+  html:not(.dark) .text-pcb-gold {
+    color: #b86e28 !important;
+    font-weight: 600;
+  }
+
+  html:not(.dark) .text-pcb-copper {
+    color: #b86e28 !important;
+    font-weight: 600;
+  }
+
+  html:not(.dark) .text-gradient {
+    background-image: linear-gradient(135deg, #b86e28, #d68a34, #e69538) !important;
+    font-weight: 700;
+  }
+
+  /* Make headings bolder in light mode */
+  html:not(.dark) h1,
+  html:not(.dark) h2,
+  html:not(.dark) h3,
+  html:not(.dark) h4 {
+    font-weight: 700;
+  }
+
+  html:not(.dark) .bg-pcb-dark,
+  html:not(.dark) .bg-pcb-green\/30,
+  html:not(.dark) .bg-pcb-green\/50 {
+    background-color: rgba(255, 249, 240, 0.5) !important;
+  }
+
+  html:not(.dark) .border-pcb-copper,
+  html:not(.dark) .border-pcb-copper\/30,
+  html:not(.dark) .border-pcb-copper\/50 {
+    border-color: var(--color-border) !important;
+  }
+
+  html:not(.dark) .bg-pcb-copper\/20 {
+    background-color: rgba(230, 184, 77, 0.15) !important;
+  }
+
+  /* Navigation in light mode */
+  html:not(.dark) nav {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+  }
+
+  /* Smooth scrollbar for light mode */
+  html:not(.dark) ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  html:not(.dark) ::-webkit-scrollbar-track {
+    background: rgba(255, 249, 240, 0.5);
+  }
+
+  html:not(.dark) ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--color-copper), var(--color-gold));
+    border-radius: 5px;
+  }
+
+  html:not(.dark) ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, var(--color-gold), var(--color-trace));
+  }
+}
+
+@layer utilities {
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@keyframes trace-flow {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.7;
+    filter: brightness(1.5);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Custom cursor */
+.custom-cursor {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  mix-blend-mode: difference;
+}
+
+/* Loading screen */
+.loading-screen {
+  @apply fixed inset-0 bg-pcb-dark z-50 flex items-center justify-center;
+}
+
+/* Smooth scroll */
+.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Selection */
+::selection {
+  @apply bg-pcb-gold text-pcb-dark;
+}
+
+::-moz-selection {
+  @apply bg-pcb-gold text-pcb-dark;
+}
+
