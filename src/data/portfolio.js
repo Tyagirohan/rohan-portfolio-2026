@@ -219,14 +219,14 @@ export const publications = [
   {
     id: 1,
     title: "Technological Insights into Yoga Posture Recognition: A State-of-the-Art Review",
-    link: "https://ieeexplore.ieee.org/document/10441501",
-    venue: "IEEE Xplore"
+    link: "https://ieeexplore.ieee.org/document/10593008",
+    venue: "IEEE CONECCT 2024"
   },
   {
     id: 2,
     title: "Disease Prediction in Plants: using new Era Technologies",
-    link: "https://ieeexplore.ieee.org/document/10441424",
-    venue: "IEEE Xplore"
+    link: "https://ieeexplore.ieee.org/abstract/document/10141357",
+    venue: "IEEE CONECCT 2023"
   },
   {
     id: 3,
